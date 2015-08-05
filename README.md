@@ -58,4 +58,6 @@ And sometimes it's just easier to run a Java command, like from an IDE.
 
 `$ java -cp <...> speclj.main`
 
-`$ java -cp `lein classpath` speclj.main`
+```
+$ java -cp `lein classpath` speclj.main
+```
