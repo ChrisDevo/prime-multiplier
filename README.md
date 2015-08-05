@@ -28,7 +28,7 @@ Running without options produces a table of the products of the first ten prime 
 $ lein run
 ```
 
-Running with options allows you to choose the <header> as well as the <numbers> to be multiplied:
+Running with options allows you to choose the `header` as well as the `numbers` to be multiplied:
 ```
 $ lein run <header> <numbers>
 ```
@@ -42,12 +42,13 @@ For example:
 ``` works fine too.
 
 So does 
+
 ```lein run :header 1 2 3
 ```
 
-The <header> can be given as a `"quoted-string"`, `:keyword`, or `un-quoted-string`. 
+The `header` can be given as a `"quoted-string"`, `:keyword`, or `un-quoted-string`. 
 
-The <numbers> can be quoted (`"1"`) or unquoted (`1`) and will be parsed if necessary. 
+The `numbers` can be quoted (`"1"`) or unquoted (`1`) and will be parsed if necessary. 
 
 ## Running Tests (Specs)
 
