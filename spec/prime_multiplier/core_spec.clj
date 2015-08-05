@@ -2,27 +2,17 @@
   (:require [speclj.core :refer :all]
             [prime-multiplier.core :refer :all]
             [prime-multiplier.multiplier :refer [pprint-product-table]]
-            [prime-multiplier.primes :refer [first-ten-primes]]))
+            [prime-multiplier.primes :refer [first-ten-primes primes]]))
 
 (describe "main"
   (it "should call pprint-product-table with \"prime\" and first-ten-primes when no args given"
-    (should-invoke pprint-product-table {:with ["prime" first-ten-primes]} (-main)))
+    (should-invoke pprint-product-table {:with ["prime" first-ten-primes]} (-main))
+    (let [n 11]
+      (should-invoke pprint-product-table {:with ["prime" (take n primes)]} (-main n))))
 
-  (it "throws an AssertionError if the first arg isn't a string"
-    (should-throw AssertionError (-main :k))
-    (should-throw AssertionError (-main 1)))
-
-  (it "throws an AssertionError if the rest of the args are missing"
-    (should-throw AssertionError (-main "header")))
-
-  (it "throws an AssertionError if any of the other args are not numbers"
-    (should-throw AssertionError (-main "string" :k))
-    (should-throw AssertionError (-main "string" 'dummy_symbol)))
-
-  (it "should not thorw an AssertionError if any of the other args can be parsed as a number"
-    (should-not-throw (-main "string" "1" 2 3))
-    (should-not-throw (-main "string" 1 "2" 3))
-    (should-not-throw (-main "string" 1 2 "3"))
-    (should-not-throw (-main "string" 1 2 3))))
+  (it "will throw an AssertionError if the arg given isn't a number"
+    (should-throw AssertionError (-main "k"))
+    (should-not-throw (-main "1"))
+    (should-not-throw (-main 4))))
 
 (run-specs)
