@@ -24,27 +24,18 @@ Tests are written using [Speclj](https://github.com/slagyr/speclj).
 ### With Leiningen
 ### Using `lein run`
 Running without options produces a table of the products of the first ten prime numbers:
-```
-$ lein run
-```
+`$ lein run`
 
 Running with options allows you to choose the `header` as well as the `numbers` to be multiplied:
-```
-$ lein run <header> <numbers>
-```
+`$ lein run <header> <numbers>`
 
 For example:
 
-```lein run "header" 1 "2" 3
-``` works fine
+`lein run "header" 1 "2" 3` works fine
 
-```lein run header 1 2 3
-``` works fine too.
+`lein run header 1 2 3` works fine too.
 
-So does 
-
-```lein run :header 1 2 3
-```
+So does `lein run :header 1 2 3`
 
 The `header` can be given as a `"quoted-string"`, `:keyword`, or `un-quoted-string`. 
 
@@ -55,24 +46,16 @@ The `numbers` can be quoted (`"1"`) or unquoted (`1`) and will be parsed if nece
 ### With Leiningen
 Speclj includes a Leiningen task.
 
-```
-$ lein spec
-```
+`$ lein spec`
 
 ### Using `lein run`
 Speclj also includes a Clojure main namespace:
 
-```
-$ lein run -m speclj.main
-```
+`$ lein run -m speclj.main`
 
 ### As a Java command
 And sometimes it's just easier to run a Java command, like from an IDE.
 
-```
-$ java -cp <...> speclj.main
-```
+`$ java -cp <...> speclj.main`
 
-```
-$ java -cp `lein classpath` speclj.main
-```
+`$ java -cp `lein classpath` speclj.main`
