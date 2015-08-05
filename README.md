@@ -78,6 +78,7 @@ And sometimes it's just easier to run a Java command, like from an IDE.
 $ java -cp `lein classpath` speclj.main
 ```
 
+
 ## tl;dr
 Things to do:
 
@@ -86,3 +87,8 @@ Things to do:
 - Give it a nice command besides `lein` or `java -jar`, something like `prime-table`
 
 - Package as a [Docker](https://www.docker.com/) app
+
+- Look into performance upgrades:
+
+    - Use a better prime-generation algorithm that doesn't blow the stack
+    - Only calculate the products needed once. Iterating over every row and column intersect is wasteful.
