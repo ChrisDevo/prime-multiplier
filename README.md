@@ -25,7 +25,7 @@ Tests are written using [Speclj](https://github.com/slagyr/speclj).
 
 Install Leiningen using the instructions in the link above.
 
-Before running the app using *Leiningen*, run the following command form the project root:
+Before running the app using *Leiningen*, run the following command froFixes typoFixm the project root:
 
 `lein deps`
 
